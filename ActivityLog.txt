@@ -1,0 +1,87 @@
+created project RecipeHub using laravel new RecipeHub
+created recipes.blade.php and recipe.blade.php 
+created routes for recipes.blade.php and recipe.blade.php
+created migration 2023_04_26_170819_create_recipes_table
+added fields in the migration
+migrated the fields into the database
+//php artisan migrate:refresh --seed //refresh and seed
+created the Recipe model using php artisan make:model Recipe
+adjusted the route using the model
+creted RecipeFactory using php artisan make:factory RecipeFactory
+adjusted the function in RecipeFactory using fakers
+seeded the database with the database seeder //Listing:factory(6)->create();
+created layout
+adjusted the views including the layout
+route model binding
+created the components folder
+created recipe-card.blade.php
+    component takes a prop 'recipe'
+adjusted recipes.blade.php with the recipe-card component
+    passed $recipe as a variable 'recipe' to the component
+created recipe-tags.blade.php in the compo folder
+    takes 'tagsCsv'as prop
+    separates the tags based on commas, and dispalys them in a ul
+adjusted the views with the tags component
+    passed $recipe->tags (from the database) as tagsCsv to the component
+created RecipeController using php artisan make:controller ListingController
+    created functions index() and show()
+adjusted the routes with the controller
+renamed the recipes.blade.php and recipe.blade.php as index.blade.php and show.blade.php respectively and adjusted the controller accordingly
+shifted the index and show views into a new folder recipes
+modified the layout to be a component and adjusted the view accordingly
+modified the index method in the ListingController to filter the request for tags
+created the scopeFilter in the Recipe.php model to filter based on tags
+added search bar in index.blade.php
+adjusted the scopeFilter function in the Recipe model to also filter based on the input from the search bar and adjusted the index method in the controller accordingly.
+imported clockwork packages
+created create.blade.php
+made route to the create from
+made route to store the data from the create form
+created the store() function in the controller
+    validates the form before storing
+added value={{old('value')}} to keep the old values in the iput fields in case form not validated
+created migrations for tags, comments, ratings and recipe_tags
+migrated the fields into the database
+added pagination
+created the edit form (edit.blade.php)
+created route to the edit form
+created the store function in the controller
+created the route to update recipe
+created the update function in the RecipeController
+added the delete button/form in the show.blade.php
+created the route to delete recipe
+created the destroy method in the recipe controller
+created the route to register user
+created the UserController
+created the create function in the UserController
+created the users folder
+created the register.blade.php in the users folder
+created the route to create new user
+created the store function in the UserController
+    validation
+    hash password
+    create
+    log in newly created user using auth()
+added the logout button/form in the layout
+created route to log out
+added the logout method in the UserController
+    logout using auth()
+    invalidae session
+    regenerate session token
+created route to login form
+created the login function in the UserController
+created login.blade.php in the users folder
+created route to authenticate user
+created the authenticate function in the UserController
+    calidate user
+    attempt authenticate
+added relationship to user in RecipeController and relationship to recipe in UserController
+updated show.blade.php to show whom the recipe is from
+added auth and guest features
+added profile feature for logged in user
+    created user.blade.php
+        table with recipe title, edit and delete
+    created route
+    created function in RecipeController
+added ownership to recipes
+

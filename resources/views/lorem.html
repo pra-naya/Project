@@ -1,0 +1,86 @@
+<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa et recusandae, aut nulla labore ducimus, deleniti voluptates quam quisquam, perferendis sint necessitatibus nobis sit! Deleniti debitis ea eligendi iure ipsum. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/b1960b074d.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            height: 200px;
+            border: 1 solid black;
+        }
+        .star{
+            border: 0;
+            background-color: white;
+            font-size: 30pt;
+            color: #cccccc;
+        }
+
+        .star:hover{
+            /* font-color: yellow; */
+            color: #ff9800;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sit doloribus aperiam numquam quia mollitia vitae pariatur voluptatem commodi fugit. -->
+
+    <br>
+    <div class="container">
+        <form action="#home" method="post" id="myForm">
+            <button class="star" value="1"><i class="fa-solid fa-star" ></i></button>
+            <button class="star"><i class="fa-solid fa-star" ></i></button>
+            <button class="star"><i class="fa-solid fa-star" ></i></button>
+            <button class="star"><i class="fa-solid fa-star" ></i></button>
+            <button class="star"><i class="fa-solid fa-star" ></i></button>
+            <input type="radio" value="1" name="rating" id="rating" hidden>
+            <label for="rating" class="star"><i class="fa-solid fa-star" ></i></label>
+
+        </form>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+
+        stars.forEach((star, i) => {
+            star.onclick = function() {
+                let selectedStar = i+1;
+
+                stars.forEach((star, j) => {
+                    if(selectedStar >= j+1) {
+                        star.style.color = '#ff9800' ;
+                    }
+                    else{
+                        star.style.color = '#cccccc'
+                    }
+                })
+            }
+        })
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+        var radioButtons = document.querySelectorAll('input[type="radio"]');
+        var form = document.getElementById('myForm');
+
+        radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener('click', function() {
+            form.submit();
+      });
+    });
+  });
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+users(user_id)
+recipes(recipe_id, title, description, n_value, ingredients, steps, user_id)
+tags(tag_id, name)
+comments(comment_id, data, recipe_id, user_id)
+ratings(rating_id, value, recipe_id, user_id)
+recipe_tags(recipe_id, tag_id)

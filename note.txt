@@ -1,0 +1,8 @@
+Common Resource Routes
+index - show all recipes
+show - show single recipe
+create - show form to create new recipe  
+store - store new recipe  
+edit - show form to edit recipe 
+update - update recipe 
+destroy - delete recipe
