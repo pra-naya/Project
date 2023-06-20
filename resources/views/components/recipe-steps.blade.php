@@ -1,14 +1,24 @@
 @props(['steps'])
 
 @php
-    $steps = explode("\n", $steps);
+$steps = explode("\n", $steps);
 @endphp
 
 <h3>Steps:</h3>
-<ul>
-    @foreach ($steps as $step)
-        <li>
-            {{$step}}
-        </li>
-    @endforeach
-</ul>
+<table class="table">
+    <tbody>
+
+        <tr>
+            {{!($index=1)}}
+            @foreach ($steps as $step)
+
+            <th scope="row">{{$index++}}</th>
+            <td> {{$step}}</td>
+
+            @endforeach
+
+    </tbody>
+</table>
+<tr>
+
+</tr>
