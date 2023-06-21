@@ -13,7 +13,7 @@
         {{$recipe->description}}
     </div>
     <p class="my-4">Nutritional Values: {{$recipe->n_value}}</p>
-    <div class="my-4 d-flex justify-content-between w-50">
+    <div class="my-4 d-flex justify-content-between ">
         <div>
 
             {{-- <x-recipe-tags :tags="$recipe->tag" />    --}}
@@ -33,5 +33,4 @@
         </div>
         <div class="print btn btn-secondary"><i class="fa fa-print" aria-hidden="true"></i>
  Print</div>
-        </div>
 </div>
