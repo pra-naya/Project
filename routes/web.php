@@ -42,6 +42,9 @@ Route::delete('recipes/{recipe}', [ RecipeController::class, 'destroy']);
 // Single recipe
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show']);
 
+// Print Recipe
+Route::get('recipes/{recipe}/print', [RecipeController::class, 'print']);
+
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
@@ -68,7 +71,7 @@ Route::post('/comments', [CommentController::class, 'store']);
 Route::delete('/comments/{comment}/delete', [CommentController::class, 'destroy']);
 
 // Submit Rating
-Route::post('/rating', [RatingController::class, 'store']);
+Route::post('/rating', [RatingController::class, 'store'])->middleware('auth');
 
 
 

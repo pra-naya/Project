@@ -8,17 +8,15 @@ $steps = explode("\n", $steps);
 <table class="table">
     <tbody>
 
+        {{!($index=1)}}
+        @foreach ($steps as $step)
         <tr>
-            {{!($index=1)}}
-            @foreach ($steps as $step)
 
             <th scope="row">{{$index++}}</th>
             <td> {{$step}}</td>
 
-            @endforeach
+        </tr>
+        @endforeach
 
     </tbody>
 </table>
-<tr>
-
-</tr>

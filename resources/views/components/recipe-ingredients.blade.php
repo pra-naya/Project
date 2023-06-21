@@ -10,11 +10,12 @@ $ingredients = explode(',', $ingredientsCsv);
 
     <tbody>
         @foreach ($ingredients as $ingredient)
-        <td>
-
-            {{$ingredient}}
-        </td>
+        <tr>
+            <td>
+                {{$ingredient}}
+            </td>
+        </tr>
         @endforeach
-        </ul>
+
     </tbody>
 </table>

@@ -224,4 +224,9 @@ class RecipeController extends Controller
         // return redirect('/');
         return back();
     }
+
+    // Print Recipe
+    public function print(Recipe $recipe) {
+        return view('recipes.print', ['recipe' => $recipe]);
+    }
 }
