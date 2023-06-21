@@ -15,6 +15,19 @@
 
 
   <style>
+    .print {
+      /* /* font-size: 14px; */
+      font-weight: bold;
+
+      /* letter-spacing: 1px; */
+      /* line-height: 130%; */
+      /* height: 50px; */
+      padding: 5px 30px;
+      background-color: #ededed;
+      border-radius: 100px;
+      color: #000;
+    }
+
     .star {
       border: 0;
       background-color: white;
