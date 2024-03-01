@@ -46,9 +46,6 @@ class RecipeController extends Controller
         ];
 
         
-        // dd($avg_rating);
-        // dd($comments);
-
         if(Auth::check()) {
             $user_id = auth()->id();
             $recipe = Recipe::findOrFail($recipe->id);
@@ -93,25 +90,13 @@ class RecipeController extends Controller
             'image' => ['required', 'image'],
         ]);
 
-        // $imgPath = $request->image->store('RecipeImages', 'public');
-        // dd(public_path("storage\\{$imgPath}"));
-
-        // $file = Input::file($imgPath);
-        // Image::make($file->getRealPath())->fit('200', '200')->save();
         
         $imgName = auth()->id().'_'.$formFields['title'].'.jpg';
-        $imgPath = 'D:\RecipeHub\storage\app\public\RecipeImages\\'.$imgName;
+        $imgPath = __DIR__ . '/../../../storage/app/public/RecipeImages/' . $imgName;
 
-        // $image = Image::make(public_path("storage\\{$imgPath}"))->fit('200', '200');
+
         $image = Image::make($request->file('image')->getRealPath())->fit('569', '375');
-        // dd($image);
         $image->save($imgPath);
-
-        // dd($request->image);
-
-
-        // $image = Image::make($request->image)->fit('200', '200');
-        // $image->save(public_path("storage\\{$imgName}"));
 
         $formFields['image'] = $imgName;
         
@@ -121,7 +106,6 @@ class RecipeController extends Controller
 
         $formFields['user_id'] = auth()->id();
 
-        // dd($formFields['tags']);
         $recipe = Recipe::create($formFields);
 
         
@@ -135,7 +119,6 @@ class RecipeController extends Controller
             $tagExists = Tag::where('name', $tag)->exists();
             
             if ($tagExists) {
-                // dd($tags);
                 $tag = Tag::where('name', $tag)->first();
             }
             else{
@@ -146,7 +129,6 @@ class RecipeController extends Controller
             }
             
             $recipe->tag()->attach($tag->id);
-            // dd($tag);
 
         }
 

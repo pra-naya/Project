@@ -26,10 +26,7 @@
     
         </div>
         </div>
-    
-        {{-- <div>
-            {{$recipes->links()}}
-        </div> --}}
+
 
     </div>
     

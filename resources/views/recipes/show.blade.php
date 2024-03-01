@@ -17,7 +17,6 @@
 
 
         <div class="rating-container my-4 lh-lg d-flex align-items-center justify-content-between">
-            {{-- <h3>Rate the Recipe!</h3> --}}
             <form action="/rating" method="POST">
                 @csrf
                 <button class="star" value="1" name="value"><i class="fa-solid fa-star fs-4"></i></button>

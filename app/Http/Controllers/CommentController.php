@@ -11,14 +11,6 @@ class CommentController extends Controller
 {
     // Store Comment
     public function store(Request $request) {
-        // $formfields = $request->validate([
-        //     'data' => 'required'
-        // ]);
-
-        // $formfields['user_id'] = auth()->id();
-        // // $formfields['recipe_id'] = $recipe->id;
-
-        // Comment::create($formfields);
 
         if (Auth::check()) {
             $request->validate([
